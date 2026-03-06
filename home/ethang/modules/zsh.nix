@@ -33,15 +33,15 @@
 
     # Run late; override OMZ/plugin aliases
     initContent = lib.mkOrder 1500 ''
-      unalias ll 2>/dev/null
-      unalias la 2>/dev/null
+      # unalias ll 2>/dev/null
+      # unalias la 2>/dev/null
 
       alias ll="eza -l"
       alias la="eza -la"
       alias cat="bat"
       alias grep="rg"
       alias find="fd"
-      alias update="sudo nixos-rebuild switch"
+      alias update="sudo nix flake update --flake /home/ethang/nix-config && sudo nixos-rebuild switch --flake /home/ethang/nix-config#$(hostname)"
       alias hms="home-manager switch"
       alias g="git"
       alias gs="git status"
@@ -49,8 +49,8 @@
       alias gcs="git commit -m \"sync\""
       alias gp="git push"
       alias cdp="cd ~/projects"
-      alias eh="nvim ~/.config/home-manager/home.nix"
-      alias es="sudo nvim /etc/nixos/configuration.nix"
+      alias eh="nvim ~/nix-config/home-manager/home.nix"
+      alias es="sudo nvim ~/nix-config/configuration.nix"
     '';
   };
 }
