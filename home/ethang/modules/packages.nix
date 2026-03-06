@@ -1,0 +1,43 @@
+{pkgs, ...}: {
+  home.packages = with pkgs; [
+    asciinema
+    cargo
+    curl
+    rsync
+    gcc
+    rustc
+    rust-analyzer
+    pkg-config
+    openssl
+    tmux
+    uv
+    deno
+    google-chrome
+    opencode
+    ripgrep
+    unzip
+    bat
+    eza
+    fd
+    fzf
+    gh
+    htop
+    jq
+    tree
+    claude-code
+    codex
+    nodejs
+    ghostty
+    gnumake
+    alejandra
+    stylua
+    #neofetch
+    nodePackages.prettier
+    yazi
+    go
+    lld
+    element-desktop
+    zulip
+    typos
+  ];
+}
