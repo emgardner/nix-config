@@ -35,7 +35,7 @@
     go
     lld
     element-desktop
-    zulip
+    #zulip
     typos
     pay-respects
     fastfetch
