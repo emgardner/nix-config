@@ -15,6 +15,7 @@
     ./modules/neovim.nix
     ./modules/git.nix
     ./modules/gnome.nix
+    ./modules/tmux.nix
   ];
 
   programs.home-manager.enable = true;

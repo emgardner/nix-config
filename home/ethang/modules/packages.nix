@@ -9,7 +9,6 @@
     rust-analyzer
     pkg-config
     openssl
-    tmux
     uv
     deno
     google-chrome
@@ -31,7 +30,6 @@
     gnumake
     alejandra
     stylua
-    #neofetch
     nodePackages.prettier
     yazi
     go
@@ -39,5 +37,7 @@
     element-desktop
     zulip
     typos
+    pay-respects
+    fastfetch
   ];
 }
