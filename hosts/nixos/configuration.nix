@@ -9,6 +9,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ../common/default.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -24,27 +25,27 @@
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  # Enable networking
-  networking.nameservers = ["1.1.1.1" "8.8.8.8" "8.8.8.4"];
-  networking.networkmanager.enable = true;
+  #  # Enable networking
+  #  networking.nameservers = ["1.1.1.1" "8.8.8.8" "8.8.8.4"];
+  #  networking.networkmanager.enable = true;
 
-  # Set your time zone.
-  time.timeZone = "America/New_York";
+  #  # Set your time zone.
+  #  time.timeZone = "America/New_York";
 
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
+  #  # Select internationalisation properties.
+  #  i18n.defaultLocale = "en_US.UTF-8";
 
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_US.UTF-8";
-    LC_IDENTIFICATION = "en_US.UTF-8";
-    LC_MEASUREMENT = "en_US.UTF-8";
-    LC_MONETARY = "en_US.UTF-8";
-    LC_NAME = "en_US.UTF-8";
-    LC_NUMERIC = "en_US.UTF-8";
-    LC_PAPER = "en_US.UTF-8";
-    LC_TELEPHONE = "en_US.UTF-8";
-    LC_TIME = "en_US.UTF-8";
-  };
+  #  i18n.extraLocaleSettings = {
+  #    LC_ADDRESS = "en_US.UTF-8";
+  #    LC_IDENTIFICATION = "en_US.UTF-8";
+  #    LC_MEASUREMENT = "en_US.UTF-8";
+  #    LC_MONETARY = "en_US.UTF-8";
+  #    LC_NAME = "en_US.UTF-8";
+  #    LC_NUMERIC = "en_US.UTF-8";
+  #    LC_PAPER = "en_US.UTF-8";
+  #    LC_TELEPHONE = "en_US.UTF-8";
+  #    LC_TIME = "en_US.UTF-8";
+  #  };
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -85,17 +86,17 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.ethang = {
-    isNormalUser = true;
-    description = "Ethan Gardner";
-    extraGroups = ["networkmanager" "wheel" "docker"];
-    shell = pkgs.zsh;
-    packages = with pkgs; [
-      #  thunderbird
-    ];
-  };
+  # users.users.ethang = {
+  #   isNormalUser = true;
+  #   description = "Ethan Gardner";
+  #   extraGroups = ["networkmanager" "wheel" "docker"];
+  #   shell = pkgs.zsh;
+  #   packages = with pkgs; [
+  #     #  thunderbird
+  #   ];
+  # };
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  # nixpkgs.config.allowUnfree = true;
 
   #home-manager.users.ethang = import "/home/ethang/.config/home-manager/home.nix";
 
@@ -105,30 +106,30 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    tailscale
-    kitty
-    docker-compose
-  ];
+  # environment.systemPackages = with pkgs; [
+  #   tailscale
+  #   kitty
+  #   docker-compose
+  # ];
 
-  services.tailscale = {
-    enable = true;
-    extraSetFlags = ["--ssh"];
-  };
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
+  # services.tailscale = {
   #   enable = true;
-  #   enableSSHSupport = true;
+  #   extraSetFlags = ["--ssh"];
   # };
-  programs.nix-ld.enable = true;
-  programs.direnv.enable = true;
-  programs.zsh.enable = true;
-  virtualisation.docker = {
-    enable = true;
-  };
+
+  # # Some programs need SUID wrappers, can be configured further or are
+  # # started in user sessions.
+  # # programs.mtr.enable = true;
+  # # programs.gnupg.agent = {
+  # #   enable = true;
+  # #   enableSSHSupport = true;
+  # # };
+  # programs.nix-ld.enable = true;
+  # programs.direnv.enable = true;
+  # programs.zsh.enable = true;
+  # virtualisation.docker = {
+  #   enable = true;
+  # };
 
   # List services that you want to enable:
 
@@ -147,5 +148,5 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "25.11"; # Did you read the comment?
+  # system.stateVersion = "25.11"; # Did you read the comment?
 }
