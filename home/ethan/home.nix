@@ -3,8 +3,8 @@
   pkgs,
   ...
 }: {
-  home.username = "ethang";
-  home.homeDirectory = "/home/ethang";
+  home.username = "ethan";
+  home.homeDirectory = "/home/ethan";
   home.stateVersion = "25.11";
 
   nixpkgs.config.allowUnfree = true;
@@ -14,7 +14,6 @@
     ../common/zsh.nix
     ../common/neovim.nix
     ../common/git.nix
-    ../common/gnome.nix
     ../common/tmux.nix
   ];
 
