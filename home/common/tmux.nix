@@ -10,6 +10,9 @@
 
       # New window (prefix + c) in the current directory
       bind c new-window -c "#{pane_current_path}"
+      set -g default-terminal "tmux-256color"
+      set -as terminal-overrides ",*:Tc"
+      set -as terminal-features ",*:RGB"
 
     '';
   };

@@ -30,14 +30,13 @@
     gnumake
     alejandra
     stylua
-    nodePackages.prettier
     yazi
     go
     lld
     element-desktop
-    #zulip
     typos
     pay-respects
     fastfetch
+    neovim
   ];
 }
