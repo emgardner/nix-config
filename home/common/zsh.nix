@@ -51,6 +51,7 @@
       alias gp="git push"
       alias cdp="cd ~/projects"
       alias eh="nvim ~/nix-config"
+      eval "$(direnv hook zsh)"
     '';
   };
 }

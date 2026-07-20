@@ -38,5 +38,6 @@
     pay-respects
     fastfetch
     neovim
+    bun
   ];
 }
