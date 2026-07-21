@@ -16,6 +16,7 @@
     ../common/git.nix
     ../common/gnome.nix
     ../common/tmux.nix
+    ../common/ssh.nix
   ];
 
   programs.home-manager.enable = true;

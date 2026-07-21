@@ -13,7 +13,8 @@
       set -g default-terminal "tmux-256color"
       set -as terminal-overrides ",*:Tc"
       set -as terminal-features ",*:RGB"
-
+      set -g set-clipboard on
+      set -g allow-passthrough on
     '';
   };
 }

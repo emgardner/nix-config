@@ -12,9 +12,9 @@
   imports = [
     ../common/packages.nix
     ../common/zsh.nix
-    # ../common/neovim.nix
     ../common/git.nix
     ../common/tmux.nix
+    ../common/ssh.nix
   ];
 
   programs.home-manager.enable = true;

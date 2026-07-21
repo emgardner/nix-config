@@ -4,11 +4,9 @@
     settings.user = {
       name = "emgardner";
       email = "gardner.ethan10@gmail.com";
-    };
-    extraConfig = {
+      init.defaultBranch = "main";
+      pull.rebase = false;
       credential.helper = "manager";
     };
   };
-
-  programs.ssh.enable = true;
 }
