@@ -32,7 +32,12 @@
           homeDirectory = "/home/ethan";
           type = "home";
         };
-
+        "ethan-gti15" = {
+          username = "ethang";
+          system = "x86_64-linux";
+          homeDirectory = "/home/ethan";
+          type = "nixos";
+        };
       };
       
       mkPkgs = system:
@@ -58,39 +63,44 @@
             }
           ];
         };
-  in {
-
-      nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
-          system = hosts.nixos.system;
+      
+      mkNixos =
+        hostName: host:
+        nixpkgs.lib.nixosSystem {
+          system = host.system;
 
           specialArgs = {
-            inherit inputs;
-            hostName = "nixos";
-            host = hosts.nixos;
+            inherit inputs hostName host;
           };
 
           modules = [
-            ./hosts/nixos/configuration.nix
+            ./hosts/${hostName}/configuration.nix
 
             home-manager.nixosModules.home-manager
             {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = {
-                inherit inputs;
-                hostName = "nixos";
-                host = hosts.nixos;
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                extraSpecialArgs = {
+                  inherit inputs hostName host;
+                };
+                users.${host.username} = import ./home/${host.username}/home.nix;
               };
-              home-manager.users.${hosts.nixos.username} =
-                import ./home/${hosts.nixos.username}/home.nix;
             }
           ];
         };
-      };
+     nixosHosts = lib.filterAttrs (_hostName: host: host.type == "nixos") hosts;
+     homeHosts = lib.filterAttrs (_hostName: host: host.type == "home") hosts;
+  in {
 
-      homeConfigurations = {
-        "ethan@ethan-ser9" = mkHome "ethan-ser9" hosts."ethan-ser9";
-      };
+      nixosConfigurations = lib.mapAttrs mkNixos nixosHosts;
+      homeConfigurations = lib.mapAttrs'
+        (
+          hostName: host:
+          lib.nameValuePair
+            "${host.username}@${hostName}"
+            (mkHome hostName host)
+          )
+          homeHosts;
   };
 }
