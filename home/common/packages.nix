@@ -41,5 +41,6 @@
     bun
     just
     git-filter-repo
+    tree-sitter
   ];
 }
