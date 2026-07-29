@@ -39,5 +39,7 @@
     fastfetch
     neovim
     bun
+    just
+    git-filter-repo
   ];
 }

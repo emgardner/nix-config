@@ -35,6 +35,13 @@
     initContent = lib.mkOrder 1500 ''
       # unalias ll 2>/dev/null
       # unalias la 2>/dev/null
+      hms() {
+        local user_name="$USER"
+        local host_name="''${HOST%%.*}"
+        local flake="$HOME/nix-config#$user_name@$host_name"
+        echo "Switching Home Manager configuration: $flake"
+        home-manager switch -b backup --flake "$flake" "$@"
+      }
       bindkey '\t' autosuggest-accept
       alias ll="eza -l"
       alias la="eza -la"
@@ -43,7 +50,6 @@
       alias find="fd"
       alias update='nix flake update "$HOME/nix-config"'
       alias rebuild='sudo nixos-rebuild switch --flake "$HOME/nix-config#nixos"'
-      alias hms='home-manager switch --flake "$HOME/nix-config#$(whoami)@$(hostname)"'
       alias g="git"
       alias gs="git status"
       alias gc="git commit"
