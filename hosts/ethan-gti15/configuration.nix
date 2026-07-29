@@ -13,7 +13,7 @@
   ];
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  networking.hostName = "ethan-gti15"; # Define your hostname.
+  networking.hostName = "ethan-gti15";
   networking.networkmanager.enable = true;
   time.timeZone = "America/New_York";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -49,5 +49,12 @@
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [];
   services.openssh.enable = true;
-  system.stateVersion = "25.11"; # Did you read the comment?
+  system.stateVersion = "25.11";
+  # Always keep it on
+  systemd.sleep.settings.Sleep = {
+    AllowSuspend = "no";
+    AllowHibernation = "no";
+    AllowSuspendThenHibernate = "no";
+    AllowHybridSleep = "no";
+  };
 }

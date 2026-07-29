@@ -37,8 +37,12 @@
 
   services.tailscale = {
     enable = true;
-    extraSetFlags = ["--ssh"];
+    extraUpFlags = [
+      "--ssh"
+      #"--accept-dns=false"
+    ];
   };
+  services.resolved.enable = true;
 
   programs.nix-ld.enable = true;
   programs.direnv.enable = true;
