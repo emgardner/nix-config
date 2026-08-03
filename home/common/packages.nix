@@ -1,7 +1,9 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     asciinema
+    bacon
     cargo
+    cargo-nextest
     curl
     rsync
     gcc
@@ -42,5 +44,7 @@
     just
     git-filter-repo
     tree-sitter
+    kicad
+    nettools
   ];
 }

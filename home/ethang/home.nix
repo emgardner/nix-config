@@ -24,4 +24,12 @@
   home.sessionVariables = {
     TERMINAL = "ghostty";
   };
+
+  programs.ghostty = {
+    enable = true;
+    enableZshIntegration = true;
+    settings = {
+      shell-integration-features = "ssh-terminfo,ssh-env";
+    };
+  };
 }
