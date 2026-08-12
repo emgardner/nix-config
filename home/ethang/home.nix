@@ -11,7 +11,8 @@
 
   imports = [
     ../common/packages.nix
-    ../common/zsh.nix
+    #../common/zsh.nix
+    ../common/shell/zsh
     #../common/neovim.nix
     ../common/git.nix
     ../common/gnome.nix

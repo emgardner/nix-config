@@ -46,5 +46,7 @@
     tree-sitter
     kicad
     nettools
+    nmap
+    tcpdump
   ];
 }
