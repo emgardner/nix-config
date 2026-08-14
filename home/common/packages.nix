@@ -2,6 +2,7 @@
   home.packages = with pkgs; [
     asciinema
     bacon
+    btop
     cargo
     cargo-nextest
     curl
