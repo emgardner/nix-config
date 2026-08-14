@@ -35,7 +35,7 @@
       "ethan-gti15" = {
         username = "ethang";
         system = "x86_64-linux";
-        homeDirectory = "/home/ethan";
+        homeDirectory = "/home/ethang";
         type = "nixos";
       };
     };
