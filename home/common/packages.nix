@@ -49,5 +49,6 @@
     nettools
     nmap
     tcpdump
+    usbutils
   ];
 }

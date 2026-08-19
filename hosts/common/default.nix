@@ -23,7 +23,7 @@
   users.users.ethang = {
     isNormalUser = true;
     description = "Ethan Gardner";
-    extraGroups = ["networkmanager" "wheel" "docker"];
+    extraGroups = ["networkmanager" "wheel" "docker" "dialout"];
     shell = pkgs.zsh;
     packages = with pkgs; [];
   };
