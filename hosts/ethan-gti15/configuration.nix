@@ -57,4 +57,16 @@
     AllowSuspendThenHibernate = "no";
     AllowHybridSleep = "no";
   };
+  networking.firewall = {
+    enable = true;
+    # Open specific ports on a named interface (e.g., "eth0")
+    interfaces."enp173s0" = {
+      allowedTCPPorts = [80 443 8000 5173];
+      allowedUDPPorts = [53];
+    };
+    interfaces."enp172s0" = {
+      allowedTCPPorts = [80 443 4222];
+      allowedUDPPorts = [53];
+    };
+  };
 }
