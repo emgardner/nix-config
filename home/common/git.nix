@@ -7,7 +7,7 @@
         email = "gardner.ethan10@gmail.com";
       };
       init.defaultBranch = "main";
-      pull.rebase = false;
+      pull.ff = "only";
       credential.helper = "manager";
     };
   };
