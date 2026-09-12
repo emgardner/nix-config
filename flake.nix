@@ -26,7 +26,7 @@
         type = "nixos";
       };
 
-      "ethan-ser9" = {
+      "ethan-SER9" = {
         username = "ethan";
         system = "x86_64-linux";
         homeDirectory = "/home/ethan";
