@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   home.packages = with pkgs; [
     asciinema
     bacon
@@ -16,6 +20,7 @@
     deno
     google-chrome
     opencode
+    inputs.llm-agents.packages.${pkgs.system}.opencode2
     ripgrep
     unzip
     bat
