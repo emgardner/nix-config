@@ -7,8 +7,6 @@
   home.homeDirectory = "/home/ethang";
   home.stateVersion = "25.11";
 
-  nixpkgs.config.allowUnfree = true;
-
   imports = [
     ../common/packages.nix
     #../common/zsh.nix
