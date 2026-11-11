@@ -19,7 +19,6 @@
     uv
     deno
     google-chrome
-    opencode
     inputs.llm-agents.packages.${pkgs.system}.opencode2
     ripgrep
     unzip
