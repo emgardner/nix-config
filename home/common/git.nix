@@ -6,7 +6,7 @@
         name = "emgardner";
         email = "gardner.ethan10@gmail.com";
       };
-      core {
+      core = {
         editor = "vim";
       };
       init.defaultBranch = "main";
